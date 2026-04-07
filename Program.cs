@@ -1,31 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-Console.WriteLine("==================");
-Console.WriteLine("Pilih Angka 1-4: ");
-Console.WriteLine("------------------");
-Console.WriteLine("1. Penjumlahan");
-Console.WriteLine("2. Pengurangan");
-Console.WriteLine("3. Perkalian");
-Console.WriteLine("4. Pembagian");
-Console.WriteLine("==================");
-int p = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Masukan Angka Pertama: ");
-int var1 = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Masukan Ankga Kedua: ");
-int var2 = int.Parse(Console.ReadLine()!);
-if (p == 1)
+
+class Calculator
 {
-    Console.WriteLine("Hasil: " + (var1 + var2));
+    static void Main(string[] args)
+    {
+        int a = 10;
+        int b = 6;
+
+        Console.WriteLine("Hasil Penambahan: {0} + {1} = {2}", a, b, Penambahan(a, b));
+        Console.WriteLine("Hasil Pengurangan: {0} - {1} = {2}", a, b, Pengurangan(a, b));
+
+        Console.WriteLine("\nTekan sembarang key untuk keluar");
+        Console.ReadKey();
+    }
+
+    static int Penambahan(int a, int b)
+    {
+        return a + b;
+    }
+
+    static int Pengurangan(int a, int b)
+    {
+        return a - b;
+    }
 }
-else if (p == 2)
-{
-    Console.WriteLine("Hasil: " + (var1 - var2));
-}
-else if (p == 3)
-{
-    Console.WriteLine("Hasil: " + (var1 * var2));
-}
-else if (p == 4)
-{
-    Console.WriteLine("Hasil: " + (var1 / var2));
-}
+
+
